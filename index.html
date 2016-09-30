@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+</head>
+<body>
+  <div class="slider" id="slider" width="300px" height="600px" style="max-width: 300px;">
+    <img src="https://raw.githubusercontent.com/Andrushkins/images/master/gazeta/300x600%201.jpg" id="img" width="100%">
+  </div>
+  <script type="text/javascript">
+    var imageCount = 1;
+    var total = 8;
+    var time;
+
+    (function slide() {
+      var Image = document.getElementById('img');
+      imageCount = imageCount + 1;
+      var time = time;
+      if (imageCount > total) {
+        imageCount = 1;
+        time = 800;
+      } else {
+        time = 1500;
+      }
+      Image.src = "https://raw.githubusercontent.com/Andrushkins/images/master/gazeta/300x600%20" + imageCount + ".jpg";
+      setTimeout(function() {
+        slide();
+      },time);
+    }());
+  </script>
+</body>
+</html>
